@@ -1,0 +1,44 @@
+{
+	"name": "Social Security Number",
+	"fields": [
+		{
+			"name": "Name",
+			"title": "Name",
+			"type": "text",
+			"default": "Select",
+			"validations": [
+				{
+					"v1": "MIN_3",
+					"v2": "NON_EMPTY"
+				}
+			]
+		},
+		{
+			"name": "Disabled",
+			"title": "Disabled",
+			"type": "checkbox",
+			"validations": [
+				{
+					"v1": "MIN_3",
+					"v2": "NON_EMPTY"
+				}
+			]
+		},
+		{
+			"name": "Gender",
+			"title": "Gender",
+			"type": "select",
+			"default": "1",
+			"values": {
+				"1": "Male",
+				"2": "Female",
+				"3": "Others"
+			},
+			"validations": [
+				{
+					"v2": "NON_EMPTY"
+				}
+			]
+		}
+	]
+}

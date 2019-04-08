@@ -1,0 +1,57 @@
+ {
+	"name": "Person Details",
+	"fields": [
+		{
+			"name": "First Name",
+			"title": "Name(First)",
+			"type": "text",
+			"default": "Select",
+			"validations": [
+				{
+					"v1": "MIN_3",
+					"v2": "NON_EMPTY"
+				}
+			]
+		},
+		{
+			"name": "Last Name",
+			"title": "Last(First)",
+			"type": "text",
+			"default": "Select",
+			"validations": [
+				{
+					"v1": "MIN_3",
+					"v2": "NON_EMPTY"
+				}
+			]
+		},
+		{
+			"name": "SSN",
+			"title": "SSN",
+			"type": "number",
+			"default": "Select SSN",
+			"validations": [
+				{
+					"v1": "MIN_3",
+					"v2": "NON_EMPTY"
+				}
+			]
+		},
+		{
+			"name": "Title",
+			"title": "Title",
+			"type": "select",
+			"default": "1",
+			"values": {
+				"1": "Mr",
+				"2": "Miss",
+				"3": "Mrs"
+			},
+			"validations": [
+				{
+					"v2": "NON_EMPTY"
+				}
+			]
+		}
+	]
+}

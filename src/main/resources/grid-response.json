@@ -1,0 +1,178 @@
+{
+	"queryId": "name",
+	"headerColumns": [
+		"Person Number",
+		"Date of birth",
+		"Enrolled"
+	],
+	"parentRowDataList": [
+		{
+			"rowData": {
+				"Person Number": 100,
+				"Date of birth": "01/01/2011",
+				"Enrolled": true
+			},
+			"childRowDataHeader": [
+				"Child1",
+				"Child2",
+				"Child3"
+			]
+		},
+		{
+			"rowData": {
+				"Person Number": 101,
+				"Date of birth": "02/02/2001",
+				"Enrolled": true
+			},
+			"childRowDataHeader": [
+				"Child1",
+				"Child2",
+				"Child3"
+			]
+		},
+		{
+			"rowData": {
+				"Person Number": 102,
+				"Date of birth": "02/03/2001",
+				"Enrolled": true
+			},
+			"childRowDataHeader": [
+				"Child1",
+				"Child2",
+				"Child3"
+			]
+		},
+		{
+			"rowData": {
+				"Person Number": 103,
+				"Date of birth": "06/04/2001",
+				"Enrolled": true
+			},
+			"childRowDataHeader": [
+				"Child1",
+				"Child2",
+				"Child3"
+			]
+		},
+		{
+			"rowData": {
+				"Person Number": 104,
+				"Date of birth": "02/08/2001",
+				"Enrolled": false
+			},
+			"childRowDataHeader": [
+				"Child1",
+				"Child2",
+				"Child3"
+			]
+		},
+		{
+			"rowData": {
+				"Person Number": 105,
+				"Date of birth": "09/04/2001",
+				"Enrolled": true
+			},
+			"childRowDataHeader": [
+				"Child1",
+				"Child2",
+				"Child3"
+			]
+		},
+		{
+			"rowData": {
+				"Person Number": 106,
+				"Date of birth": "02/07/2001",
+				"Enrolled": false
+			},
+			"childRowDataHeader": [
+				"Child1",
+				"Child2",
+				"Child3"
+			]
+		},
+		{
+			"rowData": {
+				"Person Number": 107,
+				"Date of birth": "09/09/2001",
+				"Enrolled": true
+			},
+			"childRowDataHeader": [
+				"Child1",
+				"Child2",
+				"Child3"
+			]
+		},
+		{
+			"rowData": {
+				"Person Number": 108,
+				"Date of birth": "03/03/2001",
+				"Enrolled": false
+			},
+			"childRowDataHeader": [
+				"Child1",
+				"Child2",
+				"Child3"
+			]
+		},
+		{
+			"rowData": {
+				"Person Number": 109,
+				"Date of birth": "12/04/2001",
+				"Enrolled": true
+			},
+			"childRowDataHeader": [
+				"Child1",
+				"Child2",
+				"Child3"
+			]
+		},
+		{
+			"rowData": {
+				"Person Number": 110,
+				"Date of birth": "13/04/2001",
+				"Enrolled": false
+			},
+			"childRowDataHeader": [
+				"Child1",
+				"Child2",
+				"Child3"
+			]
+		},
+		{
+			"rowData": {
+				"Person Number": 111,
+				"Date of birth": "02/09/2001",
+				"Enrolled": true
+			},
+			"childRowDataHeader": [
+				"Child1",
+				"Child2",
+				"Child3"
+			]
+		},
+		{
+			"rowData": {
+				"Person Number": 112,
+				"Date of birth": "02/10/2001",
+				"Enrolled": false
+			},
+			"childRowDataHeader": [
+				"Child1",
+				"Child2",
+				"Child3"
+			]
+		},
+		{
+			"rowData": {
+				"Person Number": 113,
+				"Date of birth": "02/11/2001",
+				"Enrolled": true
+			},
+			"childRowDataHeader": [
+				"Child1",
+				"Child2",
+				"Child3"
+			]
+		}
+	]
+}
