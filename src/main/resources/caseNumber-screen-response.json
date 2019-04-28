@@ -1,0 +1,14 @@
+{
+	"name": "Case Number",
+	"fields": [{
+			"name": "Case Number",
+			"title": "Case Number",
+			"type": "text",
+			"default": "Select",
+			"validations": [{
+				"v1": "MIN_3",
+				"v2": "NON_EMPTY"
+			}]
+		}
+	]
+}

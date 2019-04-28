@@ -29,6 +29,8 @@
 			"title": "Gender",
 			"type": "select",
 			"default": "1",
+			"source": "Table/query/api",
+			"data": "XYZ_TABLE",
 			"values": {
 				"1": "Male",
 				"2": "Female",

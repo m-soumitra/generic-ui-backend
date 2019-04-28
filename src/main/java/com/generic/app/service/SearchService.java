@@ -8,6 +8,8 @@ import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -22,33 +24,33 @@ import com.generic.app.dto.SectionDTO;
 
 @Service("searchService")
 public class SearchService {
+	
+	@Autowired
+	@Qualifier("dropDownService")
+	DropDownService dropDownService;
+	
 	private static final Logger logger = LoggerFactory.getLogger(SearchService.class);
 	public static final Map<String, Integer> QUERY_MAP;
 	static {
 		Map<String, Integer> tempMap = new HashMap<>();
 		tempMap.put("ssn", 1);
 		tempMap.put("name", 2);
+		tempMap.put("caseNumber", 2);
 		QUERY_MAP = Collections.unmodifiableMap(tempMap);
 	}
 
 	public SectionDTO createScreenByQueryId(String queryId) throws IOException {
 		ObjectMapper mapper = new ObjectMapper();
 		InputStream is = null;
-		switch (QUERY_MAP.get(queryId)) {
-		case 1:
-			is = SearchService.class.getResourceAsStream("/ssn-screen-respone.json");
-			break;
-		case 2:
-			is = SearchService.class.getResourceAsStream("/name-screen-response.json");
-			break;
-		default:
-			logger.info("QueryId mapping not found");
-		}
-		return mapper.readValue(is, SectionDTO.class);
+		String jsonName = "/"+ queryId+ "-screen-response.json";
+		is = SearchService.class.getResourceAsStream(jsonName);
+		SectionDTO section = mapper.readValue(is, SectionDTO.class);
+		return dropDownService.populateDropDowns(section);
 	}
 
 	public GenericGridResponseDTO getGridResponse(SearchGridRequestDTO searchGridRequest) throws IOException {
 		ObjectMapper mapper = new ObjectMapper();
+		// Abstract Factory Pattern to	 get corresponding DAO class (Delegator)
 		InputStream is = null;
 		switch (QUERY_MAP.get(searchGridRequest.getQueryId())) {
 		case 1:

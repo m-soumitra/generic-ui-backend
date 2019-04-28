@@ -31,7 +31,11 @@ public @Data class FieldDTO implements Serializable {
 	private String _default;
 	@JsonProperty("validations")
 	private List<Map<String, String>> validations;
+	@JsonProperty("source")
+	private String source;
+	@JsonProperty("data")
+	private String data;
 	@JsonProperty("values")
-	private Map<String, String> defaultValues;
+	private Map<String, String> values;
 
 }

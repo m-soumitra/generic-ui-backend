@@ -31,4 +31,36 @@ public class Types {
 		}
 	}
 
+	public enum HTMLElements {
+		SELECT("select"), INPUT_TEXT("text"), NUMBER("number"), CHECKBOX("checkbox");
+
+		private final String element;
+
+		HTMLElements(String element) {
+			this.element = element;
+		}
+
+		public String getElement() {
+			return this.element;
+		}
+	}
+
+	public enum Source {
+		TABLE("table"), QUERY("query"), URL("url");
+
+		private final String source;
+
+		Source(String source) {
+			this.source = source;
+		}
+
+		public String getSource() {
+			return this.source;
+		}
+	}
+	
+	public enum MetaDataEnum {
+		
+	}
+
 }
