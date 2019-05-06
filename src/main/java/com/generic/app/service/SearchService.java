@@ -16,6 +16,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.generic.app.dto.GenericGridResponseDTO;
 import com.generic.app.dto.SearchGridRequestDTO;
 import com.generic.app.dto.SectionDTO;
+import com.generic.delegate.SearchClient;
+import com.generic.delegate.SearchDelegate;
 
 /**
  * @author smohakud
@@ -24,11 +26,11 @@ import com.generic.app.dto.SectionDTO;
 
 @Service("searchService")
 public class SearchService {
-	
+
 	@Autowired
 	@Qualifier("dropDownService")
 	DropDownService dropDownService;
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(SearchService.class);
 	public static final Map<String, Integer> QUERY_MAP;
 	static {
@@ -42,26 +44,36 @@ public class SearchService {
 	public SectionDTO createScreenByQueryId(String queryId) throws IOException {
 		ObjectMapper mapper = new ObjectMapper();
 		InputStream is = null;
-		String jsonName = "/"+ queryId+ "-screen-response.json";
+		String jsonName = "/" + queryId + "-screen-response.json";
 		is = SearchService.class.getResourceAsStream(jsonName);
 		SectionDTO section = mapper.readValue(is, SectionDTO.class);
 		return dropDownService.populateDropDowns(section);
 	}
 
 	public GenericGridResponseDTO getGridResponse(SearchGridRequestDTO searchGridRequest) throws IOException {
-		ObjectMapper mapper = new ObjectMapper();
-		// Abstract Factory Pattern to	 get corresponding DAO class (Delegator)
-		InputStream is = null;
-		switch (QUERY_MAP.get(searchGridRequest.getQueryId())) {
-		case 1:
-			is = SearchService.class.getResourceAsStream("/grid-response.json");
-			break;
-		case 2:
-			is = SearchService.class.getResourceAsStream("/grid-response.json");
-			break;
-		default:
-			logger.info("QueryId mapping not found");
-		}
-		return mapper.readValue(is, GenericGridResponseDTO.class);
+
+		SearchDelegate searchDelegate = new SearchDelegate();
+		searchDelegate.setQueryId(searchGridRequest.getQueryId());
+
+		SearchClient searchClient = new SearchClient(searchDelegate);
+		return searchClient.doTask();
+
 	}
+
+//	public GenericGridResponseDTO getGridResponse(SearchGridRequestDTO searchGridRequest) throws IOException {
+//		ObjectMapper mapper = new ObjectMapper();
+//		// Abstract Factory Pattern to	 get corresponding DAO class (Delegator)
+//		InputStream is = null;
+//		switch (QUERY_MAP.get(searchGridRequest.getQueryId())) {
+//		case 1:
+//			is = SearchService.class.getResourceAsStream("/grid-response.json");
+//			break;
+//		case 2:
+//			is = SearchService.class.getResourceAsStream("/grid-response.json");
+//			break;
+//		default:
+//			logger.info("QueryId mapping not found");
+//		}
+//		return mapper.readValue(is, GenericGridResponseDTO.class);
+//	}
 }
