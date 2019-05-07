@@ -17,4 +17,14 @@ public @Data class GridResponseWrapper extends StatusDTO implements Serializable
 	
 	private GenericGridResponseDTO results;
 
+	public GenericGridResponseDTO getResults() {
+		return results;
+	}
+
+	public void setResults(GenericGridResponseDTO results) {
+		this.results = results;
+	}
+	
+	
+
 }

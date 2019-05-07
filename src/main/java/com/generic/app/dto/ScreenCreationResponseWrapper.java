@@ -17,5 +17,19 @@ public @Data class ScreenCreationResponseWrapper extends StatusDTO implements Se
 
 	private String queryId;
 	private SectionsDTO results;
+	public String getQueryId() {
+		return queryId;
+	}
+	public void setQueryId(String queryId) {
+		this.queryId = queryId;
+	}
+	public SectionsDTO getResults() {
+		return results;
+	}
+	public void setResults(SectionsDTO results) {
+		this.results = results;
+	}
+	
+	
 
 }

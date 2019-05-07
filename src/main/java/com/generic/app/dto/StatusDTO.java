@@ -15,5 +15,19 @@ public @Data class StatusDTO implements Serializable {
     
     private String message;
     private Integer statusCd;
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	public Integer getStatusCd() {
+		return statusCd;
+	}
+	public void setStatusCd(Integer statusCd) {
+		this.statusCd = statusCd;
+	}
+    
+    
 
 }

@@ -15,5 +15,14 @@ public @Data class SectionsDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private List<SectionDTO> sections = new ArrayList<>();
+	
+	public List<SectionDTO> getSections() {
+		return sections;
+	}
+	public void setSections(List<SectionDTO> sections) {
+		this.sections = sections;
+	}
+	
+	
 
 }

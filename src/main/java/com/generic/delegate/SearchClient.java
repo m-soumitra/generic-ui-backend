@@ -3,6 +3,7 @@ package com.generic.delegate;
 import java.io.IOException;
 
 import com.generic.app.dto.GenericGridResponseDTO;
+import com.generic.app.dto.SearchGridRequestDTO;
 
 public class SearchClient  
 { 
@@ -13,9 +14,9 @@ public class SearchClient
         this.searchDelegate  = searchDelegate; 
     } 
   
-    public GenericGridResponseDTO doTask() throws IOException 
+    public GenericGridResponseDTO doTask(SearchGridRequestDTO searchGridRequest) throws IOException 
     {         
-    	return searchDelegate.doTask();
+    	return searchDelegate.doTask(searchGridRequest);
 		
     } 
 } 

@@ -56,7 +56,7 @@ public class SearchService {
 		searchDelegate.setQueryId(searchGridRequest.getQueryId());
 
 		SearchClient searchClient = new SearchClient(searchDelegate);
-		return searchClient.doTask();
+		return searchClient.doTask(searchGridRequest);
 
 	}
 

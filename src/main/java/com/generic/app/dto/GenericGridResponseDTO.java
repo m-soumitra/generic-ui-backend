@@ -28,4 +28,30 @@ public @Data class GenericGridResponseDTO implements Serializable{
 
 	@JsonProperty("parentRowDataList")
 	private List<ParentRowDataDTO> parentRowDataList;
+
+	public String getQueryId() {
+		return queryId;
+	}
+
+	public void setQueryId(String queryId) {
+		this.queryId = queryId;
+	}
+
+	public List<String> getHeaderColumns() {
+		return headerColumns;
+	}
+
+	public void setHeaderColumns(List<String> headerColumns) {
+		this.headerColumns = headerColumns;
+	}
+
+	public List<ParentRowDataDTO> getParentRowDataList() {
+		return parentRowDataList;
+	}
+
+	public void setParentRowDataList(List<ParentRowDataDTO> parentRowDataList) {
+		this.parentRowDataList = parentRowDataList;
+	}
+	
+	
 }
