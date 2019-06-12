@@ -1,6 +1,27 @@
- {
+{
 	"name": "Person Details",
 	"fields": [
+		{
+			"name": "First Name",
+			"title": "Name(First)",
+			"type": "text",
+			"default": "Select",
+			"validations": []
+		},
+		{
+			"name": "Last Name",
+			"title": "Last(First)",
+			"type": "text",
+			"default": "Select",
+			"validations": []
+		},
+		{
+			"name": "SSN",
+			"title": "SSN",
+			"type": "number",
+			"default": "Select SSN",
+			"validations": []
+		},
 		{
 			"name": "Title",
 			"title": "Title",
@@ -11,75 +32,7 @@
 				"2": "Miss",
 				"3": "Mrs"
 			},
-			"validations": [
-				{
-					"v2": "NON_EMPTY"
-				}
-			]
-		},
-		{
-			"name": "X",
-			"title": "X",
-			"type": "select",
-			"default": "1",
-			"values": {
-				"1": "Mr",
-				"2": "Miss",
-				"3": "Mrs"
-			},
-			"validations": [
-				{
-					"v2": "NON_EMPTY"
-				}
-			]
-		},
-		{
-			"name": "First Name",
-			"title": "Name(First)",
-			"type": "text",
-			"default": "Select",
-			"validations": [
-				{
-					"v1": "MIN_3",
-					"v2": "NON_EMPTY"
-				}
-			]
-		},
-		{
-			"name": "Last Name",
-			"title": "Last(First)",
-			"type": "text",
-			"default": "Select",
-			"validations": [
-				{
-					"v1": "MIN_3",
-					"v2": "NON_EMPTY"
-				}
-			]
-		},
-		{
-			"name": "SSN",
-			"title": "SSN",
-			"type": "number",
-			"default": "Select SSN",
-			"validations": [
-				{
-					"v1": "MIN_3",
-					"v2": "NON_EMPTY"
-				}
-			]
-		},
-		{
-			"name": "Comments",
-			"title": "Comments - Tes",
-			"type": "text",
-			"default": "Add Comments",
-			"validations": [
-				{
-					"v1": "MIN_3",
-					"v2": "NON_EMPTY"
-				}
-			]
+			"validations": []
 		}
 	]
 }

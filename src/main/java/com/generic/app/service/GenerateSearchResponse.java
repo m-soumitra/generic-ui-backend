@@ -1,4 +1,4 @@
-package com.generic.util;
+package com.generic.app.service;
 
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -8,9 +8,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
+
 import com.generic.app.dto.GenericGridResponseDTO;
 import com.generic.app.dto.ParentRowDataDTO;
 
+@Component("generateSearchResponse")
 public final class GenerateSearchResponse {
 	GenericGridResponseDTO genericGridResponseDTO;
 

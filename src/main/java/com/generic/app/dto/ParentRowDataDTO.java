@@ -16,34 +16,26 @@ import lombok.Data;
  */
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "rowData", "childRowDataHeader", "childRowDataList" })
+@JsonPropertyOrder({ "rowData","childRowDataList" })
 public @Data class ParentRowDataDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@JsonProperty("rowData")
 	private Map<String, String> rowData;
-	@JsonProperty("childRowDataHeader")
-	private List<String> childRowDataHeader;
-	@JsonProperty("childRowDataList")
-	private List<Map<String, String>> childRowDataList;
+	@JsonProperty("childRowGridValues")
+	private List<Map<String, String>> childRowGridValues;
 	public Map<String, String> getRowData() {
 		return rowData;
 	}
 	public void setRowData(Map<String, String> rowData) {
 		this.rowData = rowData;
 	}
-	public List<String> getChildRowDataHeader() {
-		return childRowDataHeader;
+	public List<Map<String, String>> getChildRowGridValues() {
+		return childRowGridValues;
 	}
-	public void setChildRowDataHeader(List<String> childRowDataHeader) {
-		this.childRowDataHeader = childRowDataHeader;
-	}
-	public List<Map<String, String>> getChildRowDataList() {
-		return childRowDataList;
-	}
-	public void setChildRowDataList(List<Map<String, String>> childRowDataList) {
-		this.childRowDataList = childRowDataList;
+	public void setChildRowGridValues(List<Map<String, String>> childRowGridValues) {
+		this.childRowGridValues = childRowGridValues;
 	}
 	
 	

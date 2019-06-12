@@ -2,14 +2,54 @@
 	"name": "Social Security Number",
 	"fields": [
 		{
-			"name": "Name",
-			"title": "Name",
+			"name": "First Name",
+			"title": "First Name",
 			"type": "text",
 			"default": "Select",
 			"validations": [
 				{
-					"v1": "MIN_3",
-					"v2": "NON_EMPTY"
+					"code": "MANDATORY",
+					"message": " field is mandatory",
+					"type": "ERROR",
+					"actionMod": "CLIENT"
+				},
+				{
+					"code": "MIN",
+					"message": " minimum characters are required",
+					"type": "ERROR",
+					"actionMod": "CLIENT"
+				},
+				{
+					"code": "ALPHANUMERIC",
+					"message": " field accepts only alpha-numeric characters",
+					"type": "ERROR",
+					"actionMod": "CLIENT"
+				}
+			]
+		},
+		{
+			"name": "Last Name",
+			"title": "Last Name",
+			"type": "text",
+			"default": "Select",
+			"validations": [
+				{
+					"code": "MANDATORY",
+					"message": " field is mandatory",
+					"type": "ERROR",
+					"actionMod": "CLIENT"
+				},
+				{
+					"code": "MIN",
+					"message": " minimum characters are required",
+					"type": "ERROR",
+					"actionMod": "CLIENT"
+				},
+				{
+					"code": "ALPHANUMERIC",
+					"message": " field accepts only alpha-numeric characters",
+					"type": "WARN",
+					"actionMod": "CLIENT"
 				}
 			]
 		},
@@ -19,28 +59,35 @@
 			"type": "checkbox",
 			"validations": [
 				{
-					"v1": "MIN_3",
-					"v2": "NON_EMPTY"
+					"code": "MANDATORY",
+					"message": " field is mandatory",
+					"type": "ERROR",
+					"actionMod": "CLIENT"
 				}
 			]
 		},
 		{
-			"name": "Gender",
+			"name": "GenderDropdown",
 			"title": "Gender",
 			"type": "select",
 			"default": "1",
-			"source": "Table/query/api",
-			"data": "XYZ_TABLE",
 			"values": {
 				"1": "Male",
 				"2": "Female",
 				"3": "Others"
 			},
-			"validations": [
-				{
-					"v2": "NON_EMPTY"
-				}
-			]
+			"validations": []
+		},
+		{
+			"name": "GenderRadio",
+			"title": "Gender ",
+			"type": "radio",
+			"default": "Male",
+			"values": {
+				"1": "Male",
+				"2": "Female"
+			},
+			"validations": []
 		}
 	]
 }

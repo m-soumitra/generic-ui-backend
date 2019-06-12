@@ -1,11 +1,14 @@
-package com.generic.delegator.dao;
+package com.generic.app.dao;
 
 import java.sql.ResultSet;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.stereotype.Repository;
+
 import com.generic.app.dto.SearchGridRequestDTO;
 
+@Repository
 public class NameSearchDao {
 
 	public static final String SELECT_PERSON = "SELECT person_number,date_of_birth,enrolled,city "

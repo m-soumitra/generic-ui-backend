@@ -1,13 +1,13 @@
-package com.generic.delegator.service.impl;
+package com.generic.app.delegatorimpl;
 
 import java.io.IOException;
 import java.io.InputStream;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.generic.app.delegator.SearchDelegator;
 import com.generic.app.dto.GenericGridResponseDTO;
 import com.generic.app.dto.SearchGridRequestDTO;
 import com.generic.app.service.SearchService;
-import com.generic.delegator.service.SearchDelegator;
 
 public class CaseNumberSearchDelegatorImpl implements SearchDelegator 
 { 
